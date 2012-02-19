@@ -43,6 +43,7 @@ To download CSV data for a single domain name of choice, the steps are as follow
 	try {
 		$email = "username@gmail.com";
 		$password = "******";
+
 		# If hardcoded, don't forget trailing slash!
 		$website = "http://www.domain.com/";
 
@@ -144,8 +145,10 @@ To download CSV data for a single domain name of choice and top search query dat
 	try {
 		$email = "username@gmail.com";
 		$password = "******";
+
 		# If hardcoded, don't forget trailing slash!
 		$website = "http://www.domain.com/";
+
 		# Valid values are "TOP_PAGES", "TOP_QUERIES", "CRAWL_ERRORS",
 		# "CONTENT_ERRORS", "CONTENT_KEYWORDS", "INTERNAL_LINKS",
 		# "EXTERNAL_LINKS" and "SOCIAL_ACTIVITY".
@@ -176,6 +179,7 @@ To download CSV data for all domains that are registered in your Google Webmaste
 	try {
 		$email = "username@gmail.com";
 		$password = "******";
+
 		# Dates must be in valid ISO 8601 format.
 		$daterange = array("2012-01-10", "2012-01-12");
 
@@ -212,8 +216,10 @@ To download data for all domains that are registered in your Google Webmaster To
 
 		# Language must be set as valid ISO 639-1 language code.
 		$language = "de";
+
 		# Dates must be in valid ISO 8601 format.
 		$daterange = array("2012-01-01", "2012-01-02");
+
 		# Valid values are "TOP_PAGES", "TOP_QUERIES", "CRAWL_ERRORS",
 		# "CONTENT_ERRORS", "CONTENT_KEYWORDS", "INTERNAL_LINKS",
 		# "EXTERNAL_LINKS" and "SOCIAL_ACTIVITY".
