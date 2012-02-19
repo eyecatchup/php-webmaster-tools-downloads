@@ -21,7 +21,8 @@ To get started, the steps are as follows:
 ### Example 1 - `DownloadCSV()`
 
 To download CSV data for a single domain name of choice, the steps are as follows:
-  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You’ll need to replace the example values for “email” and “password” with valid login details for your Google Account and for “website” with a valid URL for a site registered in your GWT account._
+  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You'll need to replace the example values for "email" and "password" with valid login details for your Google Account and for "website" with a valid URL for a site registered in your GWT account._
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -39,8 +40,8 @@ To download CSV data for a single domain name of choice, the steps are as follow
 	} catch (Exception $e) {
 		die($e->getMessage());
 	}
-?>
 ```
+
 This will download and save 8 CSV files to your hard disk:
   * `./TOP_PAGES-www.domain.com-YYYYmmdd-H:i:s.csv`
   * `./TOP_QUERIES-www.domain.com-YYYYmmdd-H:i:s.csv`
@@ -59,7 +60,8 @@ By default, the files will be saved to the same folder where you added the gwtda
 
 To download CSV data for all domains that are registered in your Google Webmaster Tools Account and to save the downloaded files to an extra folder, the steps are as follows:
   * In the same folder where you added the gwtdata.php, create a folder named `csv`.
-  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You’ll need to replace the example values for “email” and “password” with valid login details for your Google Account._
+  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You'll need to replace the example values for "email" and "password" with valid login details for your Google Account._
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -79,13 +81,14 @@ To download CSV data for all domains that are registered in your Google Webmaste
 	} catch (Exception $e) {
 		die($e->getMessage());
 	}
-?>
 ```
+
 This will download 8 CSV files for each domain that is registered in your Google Webmaster Tools Account and save them to the csv folder.
 
 ### Example 3 - `GetDownloadedFiles()`
 
 Same as example two, but using the `GetDownloadedFiles()` method to get feedback what files have been saved to your hard disk (returning absolute paths).
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -111,13 +114,13 @@ Same as example two, but using the `GetDownloadedFiles()` method to get feedback
 	} catch (Exception $e) {
 		die($e->getMessage());
 	}
-?>
 ```
 
 ### Example 4 - `SetTables()`
 
 To download CSV data for a single domain name of choice and top search query data _only_, the steps are as follows:
-  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You’ll need to replace the example values for “email” and “password” with valid login details for your Google Account and for “website” with a valid URL for a site registered in your GWT account._
+  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You'll need to replace the example values for "email" and "password" with valid login details for your Google Account and for "website" with a valid URL for a site registered in your GWT account._
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -140,14 +143,15 @@ To download CSV data for a single domain name of choice and top search query dat
 	} catch (Exception $e) {
 		die($e->getMessage());
 	}
-?>
 ```
+
 This will download and save one file only: `./TOP_QUERIES-www.domain.com-Ymd-H:i:s.csv`
 
 ### Example 5 - `SetDaterange()`
 
 To download CSV data for all domains that are registered in your Google Webmaster Tools Account and for a specific date range _only_, the steps are as follows:
-  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You’ll need to replace the example values for “email” and “password” with valid login details for your Google Account._
+  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You'll need to replace the example values for "email" and "password" with valid login details for your Google Account._
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -173,12 +177,14 @@ To download CSV data for all domains that are registered in your Google Webmaste
 	}
 ?>
 ```
+
 This will download 8 CSV files (see example #1) for each domain that is registered in your Google Webmaster Tools Account containing data for the specified date range.
 
 ### Example 6 - `SetLanguage()`
 
 To download data for all domains that are registered in your Google Webmaster Tools Account  and top search query data _only_ and for a specific date range _only_ and you want to use a custom language for the CSV headline, the steps are as follows:
-  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You’ll need to replace the example values for “email” and “password” with valid login details for your Google Account._
+  * In the same folder where you added the gwtdata.php, create and run the following PHP script.<br>_You'll need to replace the example values for "email" and "password" with valid login details for your Google Account._
+
 ```php
 <?php
 	include 'gwtdata.php';
@@ -213,6 +219,7 @@ To download data for all domains that are registered in your Google Webmaster To
 	}
 ?>
 ```
+
 This will download one CSV file for each domain that is registered in your Google Webmaster Tools Account containing top queries data for the specified date range and with a german headline.
 
 That's it.
