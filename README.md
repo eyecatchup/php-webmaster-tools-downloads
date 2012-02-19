@@ -7,6 +7,19 @@ This project provides an easy way to automate downloading of data tables from Go
 Unlike the python script (or a perfect clone), this solution does NOT require an extra client library or zend package be installed in order to run.
 Also it has some advanced functionality.
 
+### Features
+
+Since the official download list (used by the python script) returns download URLs for 1.) Top Search Queries and 2.) Top Pages only, but via the web interface there're much more downloads available, i extended the GWTdata class, so you can now download website data for:
+
+ - TOP_PAGES
+ - TOP_QUERIES
+ - CRAWL_ERRORS
+ - CONTENT_ERRORS
+ - CONTENT_KEYWORDS
+ - INTERNAL_LINKS
+ - EXTERNAL_LINKS
+ - SOCIAL_ACTIVITY
+
 ## Usage
 
 This document explains how to automate the file download process from Google Webmaster Tools by showing examples for using the php class GWTdata.
