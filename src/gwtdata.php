@@ -381,8 +381,8 @@
 			{
 				$matches = array();
 				$tmp = self::GetData($uri);
-				preg_match_all("#x26security_token(.*?)$delimiter#si", $tmp, $matches);
-				return substr($matches[1][0],4,-1);
+				preg_match_all("#46security_token(.*?)$delimiter#si", $tmp, $matches);
+				return substr($matches[1][0],3,-1);
 			}
 
 		/**
