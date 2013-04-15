@@ -20,6 +20,10 @@ Since the official download list (used by the python script) returns download UR
  - EXTERNAL_LINKS
  - SOCIAL_ACTIVITY
 
+### Update notice
+
+In case you want to automate downloading <b>crawl errors</b>, please go here: https://github.com/eyecatchup/GWT_CrawlErrors-php 
+
 ## Usage
 
 This document explains how to automate the file download process from Google Webmaster Tools by showing examples for using the php class GWTdata.
