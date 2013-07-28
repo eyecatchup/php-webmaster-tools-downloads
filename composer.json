@@ -1,0 +1,18 @@
+{
+    "name": "eyecatchup/webmaster-tools-data",
+    "description": "An easy way to automate downloading of data tables from Google Webmaster Tools",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Stephan Schmitz",
+            "email": "eyecatchup@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "require": {
+        "ext-curl": "*"
+    }
+}
