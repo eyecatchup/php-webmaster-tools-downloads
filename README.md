@@ -16,6 +16,7 @@ Since the official download list (used by the python script) returns download UR
  - CRAWL_ERRORS
  - CONTENT_ERRORS
  - CONTENT_KEYWORDS
+ - LATEST_BACKLINKS
  - INTERNAL_LINKS
  - EXTERNAL_LINKS
  - SOCIAL_ACTIVITY
@@ -61,13 +62,14 @@ To download CSV data for a single domain name of choice, the steps are as follow
 	}
 ```
 
-This will download and save 8 CSV files to your hard disk:
+This will download and save 9 CSV files to your hard disk:
 
  - `./TOP_PAGES-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./TOP_QUERIES-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./CRAWL_ERRORS-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./CONTENT_ERRORS-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./CONTENT_KEYWORDS-www.domain.com-YYYYmmdd-H:i:s.csv`
+ - `./LATEST_BACKLINKS-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./INTERNAL_LINKS-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./EXTERNAL_LINKS-www.domain.com-YYYYmmdd-H:i:s.csv`
  - `./SOCIAL_ACTIVITY-www.domain.com-YYYYmmdd-H:i:s.csv`
@@ -155,7 +157,7 @@ To download CSV data for a single domain name of choice and top search query dat
 
 		# Valid values are "TOP_PAGES", "TOP_QUERIES", "CRAWL_ERRORS",
 		# "CONTENT_ERRORS", "CONTENT_KEYWORDS", "INTERNAL_LINKS",
-		# "EXTERNAL_LINKS" and "SOCIAL_ACTIVITY".
+		# "EXTERNAL_LINKS", "SOCIAL_ACTIVITY", and "LATEST_BACKLINKS".
 		$tables = array("TOP_QUERIES");
 
 		$gdata = new GWTdata();
@@ -203,7 +205,7 @@ To download CSV data for all domains that are registered in your Google Webmaste
 	}
 ```
 
-This will download 8 CSV files (see example #1) for each domain that is registered in your Google Webmaster Tools Account containing data for the specified date range.
+This will download 9 CSV files (see example #1) for each domain that is registered in your Google Webmaster Tools Account containing data for the specified date range.
 
 ### Example 6 - `SetLanguage()`
 
@@ -226,7 +228,7 @@ To download data for all domains that are registered in your Google Webmaster To
 
 		# Valid values are "TOP_PAGES", "TOP_QUERIES", "CRAWL_ERRORS",
 		# "CONTENT_ERRORS", "CONTENT_KEYWORDS", "INTERNAL_LINKS",
-		# "EXTERNAL_LINKS" and "SOCIAL_ACTIVITY".
+		# "EXTERNAL_LINKS", "SOCIAL_ACTIVITY" and "LATEST_BACKLINKS".
 		$tables = array("TOP_QUERIES");
 
 		$gdata = new GWTdata();

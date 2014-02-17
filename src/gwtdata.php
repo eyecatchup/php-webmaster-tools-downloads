@@ -40,7 +40,8 @@
 			$this->_daterange = array("","");
 			$this->_tables = array("TOP_PAGES", "TOP_QUERIES",
 				"CRAWL_ERRORS", "CONTENT_ERRORS", "CONTENT_KEYWORDS",
-				"INTERNAL_LINKS", "EXTERNAL_LINKS", "SOCIAL_ACTIVITY"
+				"INTERNAL_LINKS", "EXTERNAL_LINKS", "SOCIAL_ACTIVITY",
+                "LATEST_BACKLINKS"
 			);
 			$this->_errTablesSort = array(0 => "http",
 				1 => "not-found", 2 => "restricted-by-robotsTxt",
@@ -77,7 +78,8 @@
 			{
 				if(is_array($arr) && !empty($arr) && sizeof($arr) <= 2) {
 					$valid = array("TOP_PAGES","TOP_QUERIES","CRAWL_ERRORS","CONTENT_ERRORS",
-					  "CONTENT_KEYWORDS","INTERNAL_LINKS","EXTERNAL_LINKS","SOCIAL_ACTIVITY");
+					  "CONTENT_KEYWORDS","INTERNAL_LINKS","EXTERNAL_LINKS","SOCIAL_ACTIVITY",
+                      "LATEST_BACKLINKS");
 					$this->_tables = array();
 					for($i=0; $i < sizeof($arr); $i++) {
 						if(in_array($arr[$i], $valid)) {
@@ -279,6 +281,10 @@
 							self::DownloadCSV_XTRA($site, $savepath,
 							  "social-activity", "x26", "SOCIAL_ACTIVITY", "social-activity-dl");
 						}
+                        elseif($table=="LATEST_BACKLINKS") {
+                            self::DownloadCSV_XTRA($site, $savepath,
+							  "external-links-domain", "\)", "LATEST_BACKLINKS", "backlinks-latest-dl");
+                        }
 						else {
 							$finalName = "$savepath/$table-$filename.csv";
 							$finalUrl = $downloadUrls[$table] ."&prop=ALL&db=%s&de=%s&more=true";
@@ -300,7 +306,7 @@
 				if(self::IsLoggedIn() === true) {
 					$uri = self::SERVICEURI . $tokenUri . "?hl=%s&siteUrl=%s";
 					$_uri = sprintf($uri, $this->_language, $site);
-					$token = self::GetToken($_uri, $tokenDelimiter);
+					$token = self::GetToken($_uri, $tokenDelimiter, $dlUri);
 					$filename = parse_url($site, PHP_URL_HOST) ."-". date("Ymd-His");
 					$finalName = "$savepath/$filenamePrefix-$filename.csv";
 					$url = self::SERVICEURI . $dlUri . "?hl=%s&siteUrl=%s&security_token=%s&prop=ALL&db=%s&de=%s&more=true";
@@ -377,12 +383,12 @@
 		 *  @param $delimiter  String   Trailing delimiter for the regex.
 		 *  @return  String    Returns a security token.
 		 */
-			private function GetToken($uri, $delimiter)
+			private function GetToken($uri, $delimiter, $dlUri='')
 			{
 				$matches = array();
 				$tmp = self::GetData($uri);
-				preg_match_all("#46security_token(.*?)$delimiter#si", $tmp, $matches);
-				return substr($matches[1][0],3,-1);
+				preg_match_all("#$dlUri.*?46security_token(.*?)$delimiter#si", $tmp, $matches);
+				return isset($matches[1][0]) ? substr($matches[1][0],3,-1) : '';
 			}
 
 		/**
