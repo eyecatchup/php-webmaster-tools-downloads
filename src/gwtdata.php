@@ -154,6 +154,13 @@
 					'service' => "sitemaps",
 					'source' => "Google-WMTdownloadscript-0.1-php"
 				);
+				
+				// Before PHP version 5.2.0 and when the first char of $pass is an @ symbol, 
+				// send data in CURLOPT_POSTFIELDS as urlencoded string.
+				if ('@' === (string)$pwd[0] || version_compare(PHP_VERSION, '5.2.0') < 0) {
+				    $postRequest = http_build_query($postRequest);
+				}				
+				
 				$ch = curl_init();
 				curl_setopt($ch, CURLOPT_URL, $url);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
