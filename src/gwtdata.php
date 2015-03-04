@@ -314,8 +314,16 @@
 					$uri = self::SERVICEURI . $tokenUri . "?hl=%s&siteUrl=%s";
 					$_uri = sprintf($uri, $this->_language, $site);
 					$token = self::GetToken($_uri, $tokenDelimiter, $dlUri);
-					$filename = parse_url($site, PHP_URL_HOST) ."-". date("Ymd-His");
+					
+					//IF Containts Sub-Folder add to CSV file.
+					$filenamesuffix = '';
+					$temp = explode('/', $site);
+					if(count($temp) > 4){
+						$filenamesuffix = '_' . $temp[3];
+					}
+					$filename = parse_url($site, PHP_URL_HOST) . $filenamesuffix ."-". date("Ymd-His");
 					$finalName = "$savepath/$filenamePrefix-$filename.csv";
+					
 					$url = self::SERVICEURI . $dlUri . "?hl=%s&siteUrl=%s&security_token=%s&prop=ALL&db=%s&de=%s&more=true";
 					$_url = sprintf($url, $this->_language, $site, $token, $this->_daterange[0], $this->_daterange[1]);
 					self::SaveData($_url,$finalName);
