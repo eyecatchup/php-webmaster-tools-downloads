@@ -152,7 +152,7 @@
 					'Email' => $email,
 					'Passwd' => $pwd,
 					'service' => "sitemaps",
-					'source' => "Google-WMTdownloadscript-0.1-php"
+					'source' => "Google-WMTdownloadscript-0.1"
 				);
 				
 				// Before PHP version 5.2.0 and when the first char of $pass is an @ symbol, 
